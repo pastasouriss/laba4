@@ -6,21 +6,21 @@ class Car:
         self.is_police = False
 
     def go(self):
-        print(f"{self.color} {self.name} is moving.")
+        print(f"{self.color} {self.name} движется.")
 
     def stop(self):
-        print(f"{self.color} {self.name} has stopped.")
+        print(f"{self.color} {self.name} остановилась.")
 
     def turn(self, direction):
-        print(f"{self.color} {self.name} turned {direction}.")
+        print(f"{self.color} {self.name} едет {direction}.")
 
     def show_speed(self):
-        print(f"{self.color} {self.name} is moving at {self.speed} km/h.")
+        print(f"{self.color} {self.name} движется со скоростью {self.speed} km/h.")
 
 class TownCar(Car):
     def show_speed(self):
         if self.speed > 60:
-            print(f"{self.color} {self.name} is exceeding the speed limit.")
+            print(f"{self.color} {self.name} превысила лимит.")
         else:
             super().show_speed()
 
@@ -30,7 +30,7 @@ class SportCar(Car):
 class WorkCar(Car):
     def show_speed(self):
         if self.speed > 40:
-            print(f"{self.color} {self.name} is exceeding the speed limit.")
+            print(f"{self.color} {self.name} превысила лимит.")
         else:
             super().show_speed()
 
@@ -38,14 +38,14 @@ class PoliceCar(Car):
     def __init__(self, name, color):
         super().__init__(name, color)
         self.is_police = True
-car = Car("Car", "Red")
+car = Car("Машина", "Красная")
 car.go()
 car.show_speed()
 car.speed = 80
 car.show_speed()
-town_car = TownCar("TownCar", "Blue")
+town_car = TownCar("Городская машина", "Голубая")
 town_car.speed = 70
 town_car.show_speed()
-police_car = PoliceCar("PoliceCar", "Black and White")
+police_car = PoliceCar("Полицейская машина", "Черно-белая")
 police_car.go()
-print("Is it a police car?", police_car.is_police)
+print("Это полицейская машина?", police_car.is_police)
