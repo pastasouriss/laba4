@@ -9,7 +9,7 @@ class Calculator:
         return a*b
     def divide(self,a,b):
         if b==0:
-            return "Cannot divide by zero"
+            return "Деление на ноль невозможно"
         return a/b
     def get_input(self):
         while True:
