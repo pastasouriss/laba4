@@ -12,6 +12,11 @@ class Calculator:
             return "Деление на ноль невозможно"
         return a/b
     def get_input(self):
+        try:
+                num1=float(input("Введите первое число"))
+                num2=float(input("Введите второе число:"))
+        except ValueError:
+            print("Введите цифру")
         while True:
             print("Выберите действие:")
             print("1. Сложение")
@@ -22,12 +27,6 @@ class Calculator:
             ch=input("Введите номер:")
             if ch=='5':
                 break
-            try:
-                num1=float(input("Введите первое число"))
-                num2=float(input("Введите второе число:"))
-            except ValueError:
-                print("Введите цифру")
-                continue
             if ch=='1':
                 res=self.add(num1,num2)
                 print(f"{num1} + {num2} = {res}")
