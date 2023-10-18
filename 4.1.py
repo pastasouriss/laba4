@@ -22,8 +22,12 @@ class Calculator:
             ch=input("Введите номер:")
             if ch=='5':
                 break
-            num1=float(input("Введите первое число"))
-            num2=float(input("Введите второе число:"))
+            try:
+                num1=float(input("Введите первое число"))
+                num2=float(input("Введите второе число:"))
+            except ValueError:
+                print("Введите цифру")
+                continue
             if ch=='1':
                 res=self.add(num1,num2)
                 print(f"{num1} + {num2} = {res}")
